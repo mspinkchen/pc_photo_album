@@ -1,0 +1,12 @@
+<%= link_to 'New Photo', new_photo_path %>
+
+<ul>
+  <% @photos.each do |photo| %>
+  <li><%= photo.title %></li>
+  <%= link_to 'show', photo_path(photo) %>
+  <%= link_to 'edit', edit_photo_path(photo) %>
+  <%= link_to 'delete', photo_path(photo), method: :delete, data: {confirm: "are you sure?"} %>
+
+  <% end %>
+
+  </ul>
